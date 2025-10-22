@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Harton Logistics - Professional supply chain and logistics solutions including custom clearance, transportation, warehousing, and consulting services. Your trusted partner in seamless logistics management.">
+    <meta name="keywords" content="logistics, supply chain, custom clearance, warehousing, transportation, freight forwarding, logistics consulting, cargo handling">
+    <title>Harton Logistics | Professional Supply Chain & Logistics Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0a1628;
+            --primary-blue: #1a2b4a;
+            --glowing-blue: #2d4a7c;
+            --accent-blue: #4a7fc1;
+            --light-blue: #6ba3d8;
+            --glowing-gold: #d4af37;
+            --dark-gold: #b8941e;
+            --deep-gold: #9a7a16;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+            --black: #000000;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+            --glow-blue: 0 0 20px rgba(74, 127, 193, 0.5);
+            --glow-gold: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--primary-dark);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--glowing-gold);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-image {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--glowing-blue), var(--accent-blue));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.25rem;
+            box-shadow: var(--glow-blue);
+            border: 1px solid var(--glowing-gold);
+        }
+
+        /* Hide logo icon if logo image is present */
+        .logo-image ~ .logo-icon {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--glowing-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--glowing-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--glowing-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.92) 0%, rgba(26, 43, 74, 0.88) 50%, rgba(45, 74, 124, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1920&h=1080&fit=crop') center/cover no-repeat;
+            color: var(--white);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(212, 175, 55, 0.02) 49%, rgba(212, 175, 55, 0.02) 51%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(212, 175, 55, 0.02) 49%, rgba(212, 175, 55, 0.02) 51%, transparent 52%);
+            background-size: 40px 40px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(74, 127, 193, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--light-blue);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--glowing-blue));
+            color: var(--white);
+            padding: 1.125rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: var(--glow-blue);
+            border: 2px solid var(--accent-blue);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(74, 127, 193, 0.5);
+            background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--glowing-gold), transparent);
+            margin: 1rem auto;
+            border-radius: 2px;
+            box-shadow: var(--glow-gold);
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+        }
+
+        /* Vision, Mission, Commitment - Text Only Design */
+        .vmc-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            margin-top: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .vmc-card {
+            background: transparent;
+            padding: 0;
+            text-align: left;
+            transition: none;
+            border: none;
+            position: relative;
+        }
+
+        .vmc-card:nth-child(2) {
+            text-align: right;
+        }
+
+        .vmc-card:nth-child(3) {
+            text-align: center;
+        }
+
+        .vmc-card::before {
+            display: none;
+        }
+
+        .vmc-card:hover {
+            background: transparent;
+        }
+
+        .vmc-icon {
+            display: none;
+        }
+
+        .vmc-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.75rem;
+        }
+
+        .vmc-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: currentColor;
+        }
+
+        .vmc-card:nth-child(1) h3::after {
+            left: 0;
+        }
+
+        .vmc-card:nth-child(2) h3::after {
+            right: 0;
+        }
+
+        .vmc-card:nth-child(3) h3::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .vmc-card p {
+            color: var(--text-light);
+            line-height: 2;
+            font-size: 1.05rem;
+            max-width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .vmc-card h3 {
+            color: var(--primary-dark);
+        }
+
+        .vmc-card h3::after {
+            background: var(--accent-blue);
+        }
+
+        /* Company Showcase Image */
+        .company-showcase {
+            margin-top: 4rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .company-showcase img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        /* Timeline - Modern Design with Connecting Lines */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 100px;
+            top: 3rem;
+            bottom: 3rem;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent-blue), var(--glowing-blue), var(--accent-blue));
+            z-index: 0;
+        }
+
+        .timeline-item {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 0;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: start;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .timeline-content::before {
+            display: none;
+        }
+
+        .timeline-content::after {
+            display: none;
+        }
+
+        .timeline-year {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            color: var(--primary-dark);
+            padding: 0;
+            border-radius: 0;
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 0;
+            box-shadow: none;
+            letter-spacing: -1px;
+            border: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-year::after {
+            content: '';
+            position: absolute;
+            right: -1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, var(--accent-blue), transparent);
+        }
+
+        .timeline-text {
+            padding: 0.5rem 0;
+        }
+
+        .timeline-content h3 {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.9;
+            font-size: 1rem;
+        }
+
+        /* Services Grid - Compact Design */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--glowing-blue), var(--accent-blue));
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-blue);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--glowing-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: var(--glow-blue);
+            border: 2px solid var(--accent-blue);
+            transition: all 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(74, 127, 193, 0.4);
+            background: linear-gradient(135deg, var(--glowing-blue), var(--accent-blue));
+        }
+
+        .service-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--light-blue);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            margin-bottom: 0.625rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Operations Showcase Section */
+        .operations-showcase {
+            background: var(--primary-dark);
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .operations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 0;
+            max-width: 100%;
+        }
+
+        .operations-image {
+            height: 100%;
+            min-height: 500px;
+        }
+
+        .operations-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .operations-content {
+            padding: 5rem 4rem;
+            color: var(--white);
+        }
+
+        .operations-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .operations-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .operations-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(74, 127, 193, 0.3);
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--light-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.5px;
+        }
+
+        /* Why Choose Us - Minimalist Design */
+        #why-choose-us {
+            background: var(--off-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #why-choose-us::before {
+            display: none;
+        }
+
+        #why-choose-us .section-header h2,
+        #why-choose-us .section-header p {
+            color: var(--primary-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid rgba(26, 43, 74, 0.1);
+        }
+
+        .feature-card {
+            text-align: left;
+            padding: 3rem 2.5rem;
+            background: transparent;
+            border-radius: 0;
+            border: none;
+            border-right: 1px solid rgba(26, 43, 74, 0.1);
+            border-bottom: 1px solid rgba(26, 43, 74, 0.1);
+            backdrop-filter: none;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.4s ease;
+        }
+
+        .feature-card:hover {
+            background: var(--white);
+            border-color: transparent;
+            transform: none;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card:hover::after {
+            width: 100%;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0 0 1.5rem 0;
+            box-shadow: none;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: none;
+        }
+
+        .feature-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--accent-blue);
+            fill: none;
+            stroke-width: 1.5;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover .feature-icon svg {
+            stroke: var(--glowing-blue);
+            transform: scale(1.15);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            margin-bottom: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section - Redesigned */
+        #contact {
+            background: var(--primary-dark);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(74, 127, 193, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        #contact .section-header h2,
+        #contact .section-header p {
+            color: var(--white);
+        }
+
+        .contact-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--accent-blue);
+            margin-bottom: 3rem;
+        }
+
+        .contact-form-container h3 {
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.625rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+            background: var(--off-white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(74, 127, 193, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-blue), var(--glowing-blue));
+            color: var(--white);
+            padding: 1.125rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: var(--glow-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(74, 127, 193, 0.4);
+            background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
+        }
+
+        .submit-button:active {
+            transform: translateY(-1px);
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(74, 127, 193, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .contact-info-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .contact-info-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--light-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            box-shadow: var(--glow-blue);
+        }
+
+        .contact-info-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            color: var(--light-blue);
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info-card p {
+            opacity: 0.9;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--glowing-gold);
+        }
+
+        footer p {
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-dark);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-lg);
+                border-bottom: 2px solid var(--glowing-gold);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem;
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.25rem;
+            }
+
+            .vmc-grid {
+                gap: 3rem;
+            }
+
+            .vmc-card {
+                text-align: left !important;
+            }
+
+            .vmc-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .vmc-card p {
+                font-size: 1rem;
+            }
+
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+                top: 4rem;
+                bottom: 4rem;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .timeline-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .timeline-year {
+                font-size: 2.5rem;
+            }
+
+            .timeline-year::after {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .service-icon {
+                margin: 0 auto;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .company-showcase {
+                margin-top: 3rem;
+            }
+
+            .contact-wrapper {
+                max-width: 100%;
+            }
+
+            .contact-form-container {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact-form-container h3 {
+                font-size: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+                margin-bottom: 0;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-info-card {
+                padding: 1.75rem;
+            }
+
+            .operations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .operations-image {
+                min-height: 300px;
+                order: 2;
+            }
+
+            .operations-content {
+                padding: 3rem 2rem;
+                order: 1;
+            }
+
+            .operations-content h2 {
+                font-size: 2rem;
+            }
+
+            .operations-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            .service-card,
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+
+            .vmc-card h3 {
+                font-size: 1.125rem;
+            }
+
+            .vmc-card p {
+                font-size: 0.95rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .operations-content {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .operations-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Tablet Responsive (768px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .operations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .operations-content {
+                padding: 4rem 3rem;
+            }
+
+            .contact-form-container {
+                padding: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            .service-card,
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/MGifensius/Harton-Logistics/main/img/Harton-Logo.png" alt="Harton Logistics" class="logo-image">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Supply Chain to <span>Unprecedented Heights</span></h1>
+            <p>Partner with industry leaders who deliver precision-engineered logistics solutions. From customs clearance to comprehensive supply chain consulting, we orchestrate seamless operations that power your business forward.</p>
+            <a href="#contact" class="cta-button">Request Consultation</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Harton Logistics</h2>
+                <div class="divider"></div>
+                <p>Built on a foundation of trust, expertise, and unwavering commitment to excellence, Harton Logistics has been revolutionizing supply chain management through innovative solutions and dedicated service.</p>
+            </div>
+
+            <!-- Vision, Mission, Commitment Cards -->
+            <div class="vmc-grid">
+                <div class="vmc-card">
+                    <h3>Our Vision</h3>
+                    <p>To be the leading logistics and supply chain partner recognized globally for innovation, reliability, and excellence. We envision a future where businesses thrive through seamless, efficient, and sustainable logistics solutions that drive growth and create lasting value.</p>
+                </div>
+
+                <div class="vmc-card">
+                    <h3>Our Mission</h3>
+                    <p>To deliver comprehensive logistics solutions that empower businesses to achieve their goals. We are committed to providing exceptional service, leveraging cutting-edge technology, and building lasting partnerships through transparency, efficiency, and unwavering dedication to our clients' success.</p>
+                </div>
+
+                <div class="vmc-card">
+                    <h3>Our Commitment</h3>
+                    <p>We pledge to uphold the highest standards of professionalism, integrity, and reliability in every engagement. Our commitment extends beyond transactions to building enduring relationships, ensuring compliance, optimizing costs, and delivering solutions that exceed expectations while adapting to the evolving needs of modern businesses.</p>
+                </div>
+            </div>
+
+            <!-- Company Showcase Image -->
+            <div class="company-showcase">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop" alt="Modern logistics warehouse with organized inventory" loading="lazy">
+            </div>
+
+            <!-- Company Timeline -->
+            <div class="section-header" style="margin-top: 5rem; margin-bottom: 3rem;">
+                <h2>Our Journey</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <div class="timeline-text">
+                            <h3>The Foundation</h3>
+                            <p>Harton Logistics was established with a vision to transform the supply chain industry. Starting with a dedicated team and a commitment to excellence, we began offering comprehensive customs clearance and transportation services, quickly building a reputation for reliability and professionalism in the logistics sector.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2017</div>
+                        <div class="timeline-text">
+                            <h3>Expansion & Growth</h3>
+                            <p>Expanding our service portfolio to include warehousing, goods handling, and supply chain consulting. We invested in advanced technology and infrastructure, established strategic partnerships across the region, and significantly grew our client base by delivering innovative solutions that exceeded industry standards.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Present</div>
+                        <div class="timeline-text">
+                            <h3>Industry Leadership</h3>
+                            <p>Today, Harton Logistics stands as a trusted partner for businesses worldwide, offering end-to-end supply chain solutions. With a robust network, cutting-edge technology, and a team of seasoned professionals, we continue to innovate and set new benchmarks in logistics excellence, serving diverse industries with unwavering commitment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Comprehensive Services</h2>
+                <div class="divider"></div>
+                <p>End-to-end logistics solutions tailored to meet your unique business needs and drive operational excellence.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Corporate & Legal Establishment</h3>
+                        <p>Expert guidance in establishing your business entity with full legal compliance and incorporation processes.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Legal Document & Permit Management</h3>
+                        <p>Comprehensive management of legal documentation, permits, and regulatory compliance for seamless operations.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 11 12 14 22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Clearance</h3>
+                        <p>Swift customs clearance services ensuring compliance with international trade regulations and expedited processing.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/>
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Goods Handling & Stevedoring</h3>
+                        <p>Professional cargo handling with trained personnel and modern equipment for safe port operations.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13"/>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Transportation & Storage</h3>
+                        <p>Integrated warehousing and transportation solutions with secure facilities and optimized routing networks.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"/>
+                            <polyline points="1 20 1 14 7 14"/>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Return Goods Management</h3>
+                        <p>Streamlined reverse logistics for returns, refurbishments, and recalls with maximum value recovery.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Logistics & Supply Chain Consulting</h3>
+                        <p>Strategic consulting to optimize operations, reduce costs, and implement solutions driving measurable results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operations Showcase Section -->
+    <section class="operations-showcase">
+        <div class="container">
+            <div class="operations-grid">
+                <div class="operations-image">
+                    <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=600&fit=crop" alt="Container shipping operations at port" loading="lazy">
+                </div>
+                <div class="operations-content">
+                    <h2>Global Reach, Local Expertise</h2>
+                    <p>With strategic partnerships spanning continents and deep local knowledge, we deliver logistics solutions that bridge global markets with precision. Our state-of-the-art facilities and experienced team ensure your cargo moves seamlessly across borders.</p>
+                    <div class="operations-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Shipments Monthly</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">On-Time Delivery</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Harton Logistics</h2>
+                <div class="divider"></div>
+                <p>Discover what sets us apart in the competitive logistics industry and why businesses trust us with their supply chain needs.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Proven Expertise</h3>
+                    <p>Years of industry experience and deep knowledge across all aspects of logistics and supply chain management, ensuring reliable solutions for complex challenges.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h3>Global Network</h3>
+                    <p>Extensive international partnerships and local expertise enabling seamless operations across borders, time zones, and regulatory environments.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Security & Compliance</h3>
+                    <p>Stringent security protocols and full regulatory compliance ensure your goods are protected and all operations meet international standards and legal requirements.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>Efficiency Focused</h3>
+                    <p>Optimized processes and advanced technology integration deliver faster turnaround times, reduced costs, and improved operational efficiency across your supply chain.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Customer-Centric</h3>
+                    <p>Dedicated account management, 24/7 support, and customized solutions tailored to your specific business needs and growth objectives.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </div>
+                    <h3>Real-Time Tracking</h3>
+                    <p>Advanced tracking systems and transparent reporting provide complete visibility into your shipments, inventory, and operations at every stage of the journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="divider"></div>
+                <p>Ready to transform your supply chain? Contact us today for a consultation and discover how we can streamline your logistics operations.</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3>Request a Quote</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name *</label>
+                                <input type="text" id="company" name="company" required placeholder="Your Company">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="john@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="service">Service Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="corporate">Corporate & Legal Establishment</option>
+                                <option value="permits">Legal Document & Permit Management</option>
+                                <option value="customs">Custom Clearance</option>
+                                <option value="handling">Goods Handling & Stevedoring</option>
+                                <option value="transport">Transportation & Storage</option>
+                                <option value="returns">Return Goods Management</option>
+                                <option value="consulting">Logistics & Supply Chain Consulting</option>
+                                <option value="other">Other Services</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your logistics needs..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">Submit Request</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information Cards -->
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h3>Our Location</h3>
+                        <p>Visit our strategically located office for consultations</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>Speak with our logistics experts anytime</p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>Get detailed information about our services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Harton Logistics. All rights reserved. | Professional Supply Chain & Logistics Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your interest! We will contact you shortly to discuss your logistics needs.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and timeline items
+        document.querySelectorAll('.service-card, .feature-card, .timeline-item, .vmc-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
